@@ -351,7 +351,7 @@ def disable(ip,port):
 def listServices(ip,port):
 	helper = httpHelper(__name="QoSHTTPHelper")
 	helper.connect(ip,port)
-	print "Disabling QoS at %s:%s" % (ip,port)
+	print "QoS at %s:%s" % (ip,port)
 	url = "http://%s:%s/wm/qos/service/json" % (ip,port)
 	try:
 	 req = helper.request("GET",url,None)
@@ -367,7 +367,7 @@ def listServices(ip,port):
 def listPolicies(ip,port):
 	helper = httpHelper(__name="QoSHTTPHelper")
 	helper.connect(ip,port)
-	print "Disabling QoS at %s:%s" % (ip,port)
+	print "QoS at %s:%s" % (ip,port)
 	url = "http://%s:%s/wm/qos/policy/json" % (ip,port)
 	try:
 	 req = helper.request("GET",url,None)
