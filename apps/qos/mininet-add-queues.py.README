@@ -1,0 +1,19 @@
+Mininet "add-queues" script
+###########################
+
+
+The Mininet "add-queues" script is mean to create 3 different queues on every 
+port of an OVS bridge "instance". This script is mean to be run as root and
+ONLY after the mininet is created. This script is also ONLY to be run on 
+mininet instances that utilize the ovs-vsctl and ovs-ofctl tools. Therefore
+a version of OVS that uses vswitchd and ovs-db must be used.
+
+WHAT THIS SCRIPT DOES
+
+This script can be modified by anyone who wished, right now this script
+gives EVERY port on EVERY bridge 3 QoS queues. This queues are DEFAULT which 
+gives max bandwitdh,20Mpbs and 2Mbps rate limited respectively. You may change
+the command at the bottom of the script to do different queues.
+
+How to run:
+"sudo ./mininet-add-queues.py"

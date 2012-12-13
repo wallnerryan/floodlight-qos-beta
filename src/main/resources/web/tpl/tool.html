@@ -1,0 +1,41 @@
+<h1 id="toolname" name="<%= toolName %>" ><%= toolName %>  <span class="label label-warning">Enabled: <%= enabled %></span></h1>
+<div id="info">
+</br>
+</br>
+<div><%= restURI %></div>
+</br>
+<div id="desc"><%= desc %></div>
+
+</div>
+<div id="enable"></div>
+</br>
+<div id="action-set">
+
+<div>
+<button id="enable-button" name="<%= toolName %>" type="submit" class="btn">Enable</button>
+<span> : </span>
+<button id="disable-button" name="<%= toolName %>" type="submit" class="btn">Disable</button>
+</div>
+</br>
+
+<div id="qos" style="display:none;">
+<h1>Manage QoS</h1>
+</br>
+</br>
+	<h2>Services</h2>
+	<div id="services">
+	</div>
+	</br>
+	<h2>Policies</h2>
+	<div id="policies">
+	</div>
+	</br>
+	</br>
+	<div>
+	<button id="add-button" name="<%= toolName %>" type="button" class="btn">Add QoS Policies</button>
+	<span> : </span>
+	<button id="remove-button" name="<%= toolName %>" type="button" class="btn">Remove QoS Policies</button>
+	</div>
+</div>
+<div id="firewall" style="display:none;">
+</div>
