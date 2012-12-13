@@ -534,8 +534,7 @@ public class QoS implements IQoSService, IFloodlightModule,
 		}
 	}
 	
-	/** Adds a policy to all switches
-	 * 	Called when sws = "all"
+	/** Adds a policy
 	 *  @author wallnerryan
 	 *  @overloaded
 	**/
@@ -630,7 +629,6 @@ public class QoS implements IQoSService, IFloodlightModule,
 				if(!(sw.isConnected())){
 					break;// cannot add
 				}
-				//logger.info("Switch : {} DPID : {}",sw.getStringId(), sw.getId());
 				logger.info("Add flow Name: {} Flow: {} Switch "+ sw.getStringId(), 
 				policy.name, flow.toString());
 				//add unique flow names based on dpid hasCode :)
@@ -677,8 +675,6 @@ public class QoS implements IQoSService, IFloodlightModule,
 				flowPusher.deleteFlow(policyName+Integer
 						.toString(sw.getStringId().hashCode()));
 				}
-				//remove from storage
-				//flowPusher.deleteFlow(policyName+Integer.toString(s));
 			}
 		}
 	
@@ -754,58 +750,47 @@ public class QoS implements IQoSService, IFloodlightModule,
 		
 		if(policy.ethtype != -1){
 			match.setDataLayerType((policy.ethtype));
-			//debug
-			logger.debug("setting match on eth-type");
+			//logger.debug("setting match on eth-type");
 		}
 		if(policy.protocol != -1){
 			match.setNetworkProtocol(policy.protocol);
-			//debug
-			logger.debug("setting match on protocol ");
+			//logger.debug("setting match on protocol ");
 		}
 		if(policy.ingressport != -1){
 			match.setInputPort(policy.ingressport);
-			//debug
-			logger.debug("setting match on ingress port ");
+			//logger.debug("setting match on ingress port ");
 		}
 		if(policy.ipdst != -1){
 			match.setNetworkDestination(policy.ipdst);
-			//debug
-			logger.debug("setting match on network destination");
+			//logger.debug("setting match on network destination");
 		}
 		if(policy.ipsrc != -1){
 			match.setNetworkSource(policy.ipsrc);
-			//debug
-			logger.debug("setting match on network source");
+			//logger.debug("setting match on network source");
 		}
 		if(policy.vlanid != -1){
 			match.setDataLayerVirtualLan(policy.vlanid);
-			//debug
-			logger.debug("setting match on VLAN");
+			//logger.debug("setting match on VLAN");
 		}
 		if(policy.tos != -1){
 			match.setNetworkTypeOfService(policy.tos);
-			//debug
-			logger.debug("setting match on ToS");
+			//logger.debug("setting match on ToS");
 		}
 		if(policy.ethsrc != null){
 			match.setDataLayerSource(policy.ethsrc);
-			//debug
-			logger.debug("setting match on data layer source");
+			//logger.debug("setting match on data layer source");
 		}
 		if(policy.ethdst != null){
 			match.setDataLayerDestination(policy.ethdst);
-			//debug
-			logger.debug("setting match on data layer destination");
+			//logger.debug("setting match on data layer destination");
 		}
 		if(policy.tcpudpsrcport != -1){
 			match.setTransportSource(policy.tcpudpsrcport);
-			//debug
-			logger.debug("setting match on transport source port");
+			//logger.debug("setting match on transport source port");
 		}
 		if(policy.tcpudpdstport != -1){
 			match.setTransportDestination(policy.tcpudpdstport);
-			//debug
-			logger.debug("setting match on transport destination");
+			//logger.debug("setting match on transport destination");
 		}
 		
 		//Create a flow mod using the previous match structure

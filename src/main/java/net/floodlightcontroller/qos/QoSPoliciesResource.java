@@ -18,8 +18,6 @@ package net.floodlightcontroller.qos;
 *  under the License.
 *
 * Implementation adopted from Firewall
-* Credit where credit is due:
-* Amer Tahir, KC Wang
 *
 **/
 
@@ -103,7 +101,7 @@ public class QoSPoliciesResource extends ServerResource {
     				status = "Adding Policy: " + policy.name;//add service
         			//basic checks on validity
     				qos.addPolicy(policy);
-    			}else{status = "Service Policy or a Queuing Policy not defined. Check is Service Exists";}
+    			}else{status = "Service Policy or a Queuing Policy not defined. Check if Service Exists";}
     		}
     		else{
     			status = "Please enable Quality of Service";
@@ -126,8 +124,6 @@ public class QoSPoliciesResource extends ServerResource {
     	//dummy service
     	QoSPolicy policy;
     	
-    	//Accepts just "name": "<Service-Name>"
-    	//or the full service object
     	try{
     		policy = jsonToPolicy(qosJson);
     	}
@@ -137,7 +133,6 @@ public class QoSPoliciesResource extends ServerResource {
     		return "{\"status\" : \"Error! Could not parse policy, see log for details.\"}";
     	}
     	String status = null;
-    	//Only add if enabled ?needed?
 		if(qos.isEnabled()){
 			boolean found = false;
 			Iterator<QoSPolicy> sIter = qos.getPolicies().iterator();
@@ -190,7 +185,6 @@ public class QoSPoliciesResource extends ServerResource {
     					"token is: {}",jp.getCurrentToken());
     		}
     	}
-    	//If START_OBJECT
     	while(jp.nextToken() != JsonToken.END_OBJECT){
     		if(jp.getCurrentToken() != JsonToken.FIELD_NAME){
     			throw new IOException("FIELD_NAME expected");
@@ -209,8 +203,6 @@ public class QoSPoliciesResource extends ServerResource {
     				//back to beginning of loop
     				continue;
     			}
-    			//Could use switch if JRE 1.7 compliant
-    			//using if else for now
     			if (tmpS == "policy-id"){
 					policy.policyid = Long.parseLong(jp.getText());
 					//logger.info("[JSON PARSER]Policy Name: {}" , jp.getText());	

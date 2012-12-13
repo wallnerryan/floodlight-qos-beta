@@ -16,15 +16,9 @@ package net.floodlightcontroller.qos;
 *  License for the specific language governing permissions and limitations
 *  under the License.
 *    
-* Implementation adopted from Firewall
-* Credit To:
-* @author Amer Tahir
-* @edited KC Wang
 **/
 
 public class QoSTypeOfService implements Comparable<QoSTypeOfService>{
-	
-	//TODO create params
 	
 	public int sid;
 	public String name;
@@ -33,7 +27,6 @@ public class QoSTypeOfService implements Comparable<QoSTypeOfService>{
 	public byte tos = 0x00;
 	
 	public QoSTypeOfService(){
-		//TODO create this.param = value
 		this.sid = -1;
 		this.name = null;
 		this.tos = 0x00;

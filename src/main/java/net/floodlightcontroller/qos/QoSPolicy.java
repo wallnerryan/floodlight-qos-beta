@@ -16,10 +16,6 @@ package net.floodlightcontroller.qos;
 *  License for the specific language governing permissions and limitations
 *  under the License.
 *    
-* Implementation adopted from Firewall
-* Credit To:
-* @author Amer Tahir
-* @edited KC Wang
 **/
 
 import org.openflow.util.HexString;

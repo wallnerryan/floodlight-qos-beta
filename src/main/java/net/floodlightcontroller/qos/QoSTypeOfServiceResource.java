@@ -33,9 +33,6 @@ import org.slf4j.LoggerFactory;
 *  under the License.
 * 
 * Implementation adopted from Firewall
-* Credit where credit is due:
-* @author Amer Tahir
-* @edited KC Wang
 */
 
 public class QoSTypeOfServiceResource extends ServerResource {
@@ -177,7 +174,6 @@ public class QoSTypeOfServiceResource extends ServerResource {
     			throw new IOException("Did not recieve START_OBJECT");
     		}
     	}
-    	//continue if START_OBJECT is found
     	while(jp.nextToken() != JsonToken.END_OBJECT){
     		if (jp.getCurrentToken() != JsonToken.FIELD_NAME){
     			throw new IOException("Needed a FIELD_NAME token");
@@ -187,8 +183,7 @@ public class QoSTypeOfServiceResource extends ServerResource {
     			String s = jp.getCurrentName();
     		
     			jp.nextToken();
-    			//get current text of the FIELD_NAME
-    			System.out.println("Current text is "+ jp.getText()); //debug for dev
+    			//System.out.println("Current text is "+ jp.getText()); //debug for dev
     			if(jp.getText().equals("")){
     				continue;
     			}
