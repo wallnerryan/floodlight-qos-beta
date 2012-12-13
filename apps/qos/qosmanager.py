@@ -27,7 +27,6 @@ import simplejson # converts between JSON and python objects
 import time
 
 def main():
-	#print (str(len(sys.argv))) 
 	#checks
 	if (len(sys.argv) == 2):
 	 if sys.argv[1] == "--help" or sys.argv[1] == "-h" or sys.argv[1] == "help":
@@ -62,7 +61,7 @@ def main():
 	 usage()
 	 exit()
 		
-	#Define the od variables for the request
+	#Define the op variables for the request
 	cmd = sys.argv[1]
 	s_p = sys.argv[2]
 	obj = sys.argv[3]

@@ -4,8 +4,9 @@ QoSPath.py ---------------------------------------------------------------------
 Developed By: Ryan Wallner (ryan.wallner1@marist.edu)
 Add QoS to a specific path in the network. Utilized circuit pusher developed by KC Wang
 [Note]
-	*circuitpusher.py is needed in the same directory for this application to run
-	 succesfully!
+	*the circuitpusher.py is needed in the same directory for this application to run
+	 succesfully! This circuitpusher instance is used WITHOUT pushing statis flows. 
+	 the static flows are commented out, circuitpusher is only used to get route.
 
  USAGE: 
 		qospath.py <add> --qos-path <name> <source-ip> <dest-ip> <policy-object> <controller-ip> <port>
@@ -23,9 +24,6 @@ import os
 import time
 import simplejson #used to process policies and encode/decode requests
 import subprocess #spawning subprocesses
-
-##Get switches in a circuit using circuitpusher (may need to modify to get all switches in path)
-##Then use the add policy to a EACH switch in in circuit using QoSPusher to add a policy along a path.
 
 def main():
 	#checks
@@ -94,7 +92,6 @@ def add(name, ip_src, ip_dst, p_obj, c_ip, port):
    	c_data = open(circs)
    except Exception as e:
    	print "Error opening file: %s" % str(e)
-   #load data into json format
    
    print "Creating a QoSPath from host %s to host %s..." % (ip_src, ip_dst)
    time.sleep(5)

@@ -112,6 +112,7 @@ def add(name, ip_src, ip_dst, p_obj, c_ip, port):
         	#add necessary match values to policy for path
         	p['sw'] = sw_id
         	p['name'] = name+"."+sw_id
+        	#screwed up connectivity on this match, remove
         	#p['ingress-port'] = str(in_prt)
         	p['ip-src'] = ip_src
         	p['ip-dst'] = ip_dst
