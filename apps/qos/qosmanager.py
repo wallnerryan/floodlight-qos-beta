@@ -460,7 +460,7 @@ def usage_help():
 		you current working directory.
 		
 		To check the status of the controller
-		qospucher.py status 127.0.0.1 8080
+		qosmanager.py status 127.0.0.1 8080
 			
 		To Add a service:
 		qosmanager.py add service '{"name": "Express Fowarding", "tos": "101000"}' 127.0.0.1 8080
