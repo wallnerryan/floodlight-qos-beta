@@ -16,6 +16,6 @@ Contributor: Ryan Wallner (Ryan.Wallner1@marist.edu)
 
 Floodlight with QoS module and tools to manage QoS state in an OF network
 
-after you clone run:
-#ant;
-#./floodlight.sh 
+#after you clone run:
+ant;
+./floodlight.sh 
