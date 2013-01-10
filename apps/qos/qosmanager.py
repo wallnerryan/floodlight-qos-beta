@@ -411,7 +411,7 @@ class httpHelper:
 	def connect(self,ip,port):		
 	 try:
 	   self.httpcon = httplib.HTTPConnection(ip,port)
-	   self.httpn.connect()
+	   self.httpcon.connect()
 	 except httplib.HTTPException:
 	   print "Could not connect to server: %s:%s" % (ip, port)
 	   exit(1)
