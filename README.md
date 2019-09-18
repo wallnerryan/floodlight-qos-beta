@@ -1,5 +1,6 @@
 Floodlight
 ==========
+**This code is not maintained anymore.**
 
 A working version of Floodlight OpenFlow Controller.
 
